@@ -11,7 +11,6 @@
 }
 
 .card-stack {
-
     position: relative;
 
     img {
@@ -31,7 +30,13 @@
 }
 
 .pick-card {
+    z-index:5;
     animation: pick-card-animation 0.8s ease-in-out !important;
+    transform: scale(1) translateX(180px) translateY(-250px) rotate(10deg);
+}
+
+.played-card-stack{
+    right:25px;
     transform: scale(1) translateX(180px) translateY(-250px) rotate(10deg);
 }
 
