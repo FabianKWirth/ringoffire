@@ -1,5 +1,5 @@
 export class Game {
-    public players: string[] = [];
+    public players: string[] = ['Asd','sdf','asd'];
     public stack: string[]=[];
     public playedCard: string[]=[];
     public currentPlayer: number = 0;
@@ -10,7 +10,6 @@ export class Game {
             this.stack.push('diamonds_'+i);
             this.stack.push('hearts_'+i);
             this.stack.push('clubs_'+i);
-
             shuffle(this.stack);
         }
     }
