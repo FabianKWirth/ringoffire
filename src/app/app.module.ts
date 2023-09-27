@@ -13,7 +13,7 @@ import { DialogAddPlayerComponent } from './dialog-add-player/dialog-add-player.
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { CardActionComponent } from './card-action/card-action.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [

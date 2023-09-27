@@ -12,7 +12,7 @@ export class GameComponent implements OnInit {
   pickCardAnimation = false;
   game!: Game;
   currentCard: string = '';
-  
+
 
   constructor(public dialog: MatDialog) { }
 
@@ -30,8 +30,10 @@ export class GameComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
-      this.game.players.push(result);
+    dialogRef.afterClosed().subscribe(name => {
+      if (name.length > 0) {
+        this.game.players.push(name);
+      }
     });
   }
 
@@ -40,6 +42,7 @@ export class GameComponent implements OnInit {
     if (!this.pickCardAnimation) {
       this.currentCard = this.game.stack.pop();
       this.game.currentPlayer++;
+      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
       this.pickCardAnimation = true;
       //this.game.playedCard.
       setTimeout(() => {
